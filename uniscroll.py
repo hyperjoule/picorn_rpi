@@ -92,8 +92,7 @@ def web_input():
         input_queue.put(text)
         flash(f'Message sent to picorn: {text}')
     return redirect(url_for('index'))
-log = logging.getLogger("werkzeug")
-log.setLevel(logging.ERROR)
+
 @app.route("/", methods=["GET"])
 def index():
     return render_template("index.html")
